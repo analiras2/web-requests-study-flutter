@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_requests_study/widgets/post_list.dart';
 
 class HomePage extends StatelessWidget {
   HomePage() : super();
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
           child: Column(
-        children: [Text('List Item 1')],
+        children: [PostList()],
       )),
     );
   }
