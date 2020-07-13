@@ -1,6 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:web_requests_study/model/post.dart';
 
+Widget _buildTags(List<String> tags) {
+  List<Widget> chips = [];
+
+  for (var i = 0; i < tags.length; i++) {
+    final chip = Flexible(
+        child: Container(
+            padding: EdgeInsets.only(right: 10),
+            child: Chip(
+              label: Text(tags[i]),
+              backgroundColor: Colors.blueGrey,
+            )));
+    chips.add(chip);
+  }
+  return Row(
+    children: chips,
+  );
+}
+
 Widget buildPostCard(Post post) {
   return Card(
     child: Container(
@@ -12,7 +30,7 @@ Widget buildPostCard(Post post) {
             post.title,
             style: TextStyle(fontSize: 18),
           ),
-          Text('iOS Android Mobile FLutter')
+          _buildTags(post.tags)
         ],
       ),
     ),
